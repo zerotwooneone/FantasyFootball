@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1978211132572839161
-    second: footballBully_bybcsilva_0
+    second: footballBully_0
   - first:
       213: 7397322396089941376
-    second: footballBully_bybcsilva_1
+    second: footballBully_1
   - first:
       213: -5348129441698895567
-    second: footballBully_bybcsilva_2
+    second: footballBully_2
   - first:
       213: -8815292354995286466
-    second: footballBully_bybcsilva_3
+    second: footballBully_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: footballBully_bybcsilva_0
+      name: footballBully_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,7 +111,7 @@ TextureImporter:
         width: 190
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -124,7 +124,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: footballBully_bybcsilva_1
+      name: footballBully_1
       rect:
         serializedVersion: 2
         x: 190
@@ -132,7 +132,7 @@ TextureImporter:
         width: 190
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,7 +145,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: footballBully_bybcsilva_2
+      name: footballBully_2
       rect:
         serializedVersion: 2
         x: 380
@@ -153,7 +153,7 @@ TextureImporter:
         width: 190
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,7 +166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: footballBully_bybcsilva_3
+      name: footballBully_3
       rect:
         serializedVersion: 2
         x: 570
@@ -174,7 +174,7 @@ TextureImporter:
         width: 190
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
