@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerAim : MonoBehaviour
 {
     private Transform aimTransform;
+    public GameObject crosshair;
 
     private void Awake()
     {
-        aimTransform = GameObject.Find("crosshair").transform;
+        aimTransform = crosshair.transform;
     }
 
     // Start is called before the first frame update
