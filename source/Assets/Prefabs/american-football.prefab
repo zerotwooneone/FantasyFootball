@@ -113,6 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5889d383362931448c0182a009f70c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 9
+  Body: {fileID: 3301466268985386164}
+  Target: {fileID: 0}
   Collider: {fileID: 1188502741657508123}
 --- !u!50 &3301466268985386164
 Rigidbody2D:

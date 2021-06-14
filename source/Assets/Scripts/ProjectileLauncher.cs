@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     public Transform FirePoint;
+    public Transform Target;
 
     public GameObject Prefab;
     // Start is called before the first frame update
@@ -24,6 +25,8 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(Prefab, FirePoint.position, FirePoint.rotation);
+        var prefab = Instantiate(Prefab, FirePoint.position, FirePoint.rotation);
+        var projectileBehavior = prefab.GetComponent<ProjectileBehavior>();
+        projectileBehavior.Target = Target;
     }
 }
