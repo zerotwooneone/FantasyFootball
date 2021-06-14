@@ -6,9 +6,10 @@ using UnityEngine;
 public class ProjectileBehavior : MonoBehaviour
 {
     public float Speed = 20f;
+    public int Damage = 10;
     public Rigidbody2D Body;
     public Transform Target;
-    public Collider2D Collider;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,20 @@ public class ProjectileBehavior : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"other:{LayerMask.LayerToName(other.gameObject.layer)} this:{LayerMask.LayerToName(gameObject.layer)}");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            return;
+        }
+        if (other.TryGetComponent<Damagable>(out var damagable))
+        {
+            damagable.Damage(Damage);
+        }
+        Debug.Log(other.name);
+        Destroy(gameObject);
     }
 }

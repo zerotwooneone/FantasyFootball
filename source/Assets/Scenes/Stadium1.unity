@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619804057}
   - component: {fileID: 619804056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 1217196636}
   - component: {fileID: 1217196635}
   - component: {fileID: 1217196634}
+  - component: {fileID: 1217196637}
   m_Layer: 0
   m_Name: FootballBully
   m_TagString: Untagged
@@ -559,6 +560,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SearchStrategy: {fileID: 1217196635}
   MoveStrategy: {fileID: 1217196634}
+--- !u!114 &1217196637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217196628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c30d3fe790cfed469bc100ed98d823a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 100
 --- !u!1 &1492919129
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1636566830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +914,7 @@ GameObject:
   - component: {fileID: 1990050858}
   - component: {fileID: 1990050861}
   - component: {fileID: 1990050862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
