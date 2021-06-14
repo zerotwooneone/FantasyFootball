@@ -26,7 +26,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"other:{LayerMask.LayerToName(other.gameObject.layer)} this:{LayerMask.LayerToName(gameObject.layer)}");
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             return;
@@ -35,7 +34,6 @@ public class ProjectileBehavior : MonoBehaviour
         {
             damagable.Damage(Damage);
         }
-        Debug.Log(other.name);
         Destroy(gameObject);
     }
 }

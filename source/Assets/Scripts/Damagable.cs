@@ -20,7 +20,7 @@ public class Damagable : MonoBehaviour
     public void Damage(int hp)
     {
         Hp -= hp;
-        if (hp <= 0)
+        if (Hp <= 0)
         {
             Die();
         }
