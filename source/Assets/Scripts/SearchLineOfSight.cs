@@ -43,7 +43,6 @@ public class SearchLineOfSight : SearchStrategy
         var spotted = hit.transform == Player.transform;
         if(spotted)
         {
-            Debug.Log($"spotted cur:{current} last:{lastSpotted?.Item2} elapsed:{timeSinceLastSpotted}");
             var spotTime = lastSpotted?.Item2 ?? current;
             lastSpotted = new Tuple<Vector2, float>(hit.transform.position, spotTime);
             if (waitElapsed)
