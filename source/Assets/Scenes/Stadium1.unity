@@ -546,6 +546,7 @@ MonoBehaviour:
   Player: {fileID: 1990050855}
   Self: {fileID: 1217196630}
   MaxDistance: 20
+  ChargeDelaySeconds: 1
 --- !u!114 &1217196636
 MonoBehaviour:
   m_ObjectHideFlags: 0
