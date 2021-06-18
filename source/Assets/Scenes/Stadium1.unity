@@ -1067,4 +1067,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1636566830}
   Target: {fileID: 619804057}
-  Prefab: {fileID: 3701328228818107838, guid: c7b9d7b93b7a5cf448cd80da9a0701d4, type: 3}
+  Fire1Prefab: {fileID: 3701328228818107838, guid: c7b9d7b93b7a5cf448cd80da9a0701d4, type: 3}
