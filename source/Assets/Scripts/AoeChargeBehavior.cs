@@ -11,19 +11,25 @@ public class AoeChargeBehavior : AoeRadiusBehavior
 
     private float _size;
     private float _growSpeed;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         if (GrowFactor < 0)
         {
-            _size = MinSize;
+            _size = MaxSize;
         }
         else
         {
-            _size = MaxSize;
+            _size = MinSize;
         }
 
         _growSpeed = (MaxSize - MinSize) / 100;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -37,11 +43,11 @@ public class AoeChargeBehavior : AoeRadiusBehavior
         var newSize = _size + (GrowFactor * _growSpeed);
         if (newSize > MaxSize)
         {
-            newSize = MinSize;
+            newSize = MaxSize;
         }
         if(newSize < MinSize)
         {
-            newSize = MaxSize;
+            newSize = MinSize;
         }
 
         _size = newSize;

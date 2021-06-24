@@ -6,7 +6,7 @@ using UnityEngine;
 public class AoeBehavior : MonoBehaviour
 {
     public AoeRadiusBehavior RadiusBehavior;
-
+    
     public Transform Transform;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class AoeBehavior : MonoBehaviour
     {
         var scaleFactor = RadiusBehavior.GetRadius();
         var localScale = transform.localScale;
-        var newXScale = Transform.localScale = new Vector3(scaleFactor * 3/2,
+        Transform.localScale = new Vector3(scaleFactor * 3/2,
             scaleFactor * 2/3, localScale.z);
     }
 }
