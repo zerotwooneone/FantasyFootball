@@ -3,14 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : HubParticipantBehavior
 {
     public Rigidbody2D body;
     public float speedFactor = 100f;
     private const float speedSanityFactor = 0.007f;
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+        Subscribe<TestArg>(SubjectKeys.Test, OnTest);
+    }
+
+    private void OnTest(TestArg obj)
+    {
+        Debug.Log("got test");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
