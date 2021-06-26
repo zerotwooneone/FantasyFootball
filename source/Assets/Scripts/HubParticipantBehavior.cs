@@ -39,8 +39,7 @@ public abstract class HubParticipantBehavior : MonoBehaviour
     protected void Publish<T>(SubjectKey key,
         T payload)
     {
-        var arg = SubjectArg.Factory(key.SubjectName, payload);
-        Publisher.PublishRequest(arg);
+        Publisher.PublishRequest(key, payload);
     }
 
     protected void Subscribe<T>(SubjectKey key,
