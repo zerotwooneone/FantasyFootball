@@ -9,19 +9,7 @@ public abstract class HubParticipantBehavior : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (Publisher.IsHubAwake)
-        {
-            HubAwake();
-        }
-        else
-        {
-            Subscribe(SubjectKeys.HubAwake, HubAwake);
-        }
-    }
-
-    protected virtual void HubAwake()
-    {
-        
+        Subscribe(SubjectKeys.HubAwake, ()=>Debug.Log($"Hub Awake {nameof(HubParticipantBehavior)}"));
     }
 
     // Start is called before the first frame update

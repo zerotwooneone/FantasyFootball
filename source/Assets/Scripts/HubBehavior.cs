@@ -8,6 +8,7 @@ public class HubBehavior : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log($"{nameof(HubBehavior)} awake");
         foreach (var key in SubjectKeys.GetAllKeys())
         {
             if (!Subjects.ContainsKey(key))
@@ -22,12 +23,23 @@ public class HubBehavior : MonoBehaviour
         }
 
         Subscriber.GetSubject = key => Subjects[key];
+        Subscriber.DrainPending();
         Publisher.RequestPublished += OnRequestPublished;
-        Publisher.IsHubAwake = true;
-        OnRequestPublished(this, SubjectArg.Factory(SubjectKeys.HubAwake));
+        
+        Publish(SubjectArg.Factory(SubjectKeys.HubAwake));
+        var pendingPublished = Publisher.Drain();
+        foreach (var pending in pendingPublished)
+        {
+            Publish(pending);
+        }
     }
 
     private void OnRequestPublished(object sender, SubjectArg arg)
+    {
+        Publish(arg);
+    }
+
+    private void Publish(SubjectArg arg)
     {
         if (!Subjects.TryGetValue(arg.SubjectKey, out var subject))
         {
@@ -39,30 +51,8 @@ public class HubBehavior : MonoBehaviour
         subject.Publish(arg.Payload);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         Publisher.RequestPublished -= OnRequestPublished;
     }
-}
-
-public class TestArg
-{
-
-}
-
-public sealed class NoPayload
-{
-    
 }

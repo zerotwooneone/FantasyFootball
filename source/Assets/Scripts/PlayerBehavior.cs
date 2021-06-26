@@ -9,11 +9,7 @@ public class PlayerBehavior : HubParticipantBehavior
     {
         base.Awake();
         Debug.Log($"{nameof(PlayerBehavior)} awake");
-    }
-
-    protected override void HubAwake()
-    {
-        base.HubAwake();
+        
         Debug.Log("publishing first");
         Publish(SubjectKeys.Test, new TestArg());
 
