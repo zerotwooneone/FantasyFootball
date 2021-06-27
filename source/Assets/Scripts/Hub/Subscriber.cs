@@ -19,7 +19,14 @@ public static class Subscriber
         }
         if (GetSubject == null)
         {
-            throw new Exception("subscriber is not set up yet");
+            var pendingSubscription = new PendingSubscription();
+            Pending.Add(() =>
+            {
+                var subject = GetSubject(key);
+                var subscription = InnerSubscribe(key, callback, subject);
+                pendingSubscription.InnerSubscription = subscription;
+            });
+            return pendingSubscription;
         }
 
         var subject = GetSubject(key);
@@ -70,6 +77,24 @@ public static class Subscriber
         
         var subject = GetSubject(key);
         var subscription = InnerSubscribe(key, callback, subject);
+        return subscription;
+    }
+    
+    private static Subscription InnerSubscribe(SubjectKey key, Action callback, Subject subject)
+    {
+        EventHandler<SubjectArg> handler = (s, o) =>
+        {
+            if (o.SubjectKey.Equals(key))
+            {
+                callback();
+            }
+            else
+            {
+                Debug.LogWarning($"event {o?.SubjectKey} does not match subscription {key}");
+            }
+        };
+        subject.Event += handler;
+        var subscription = new Subscription(() => subject.Event -= handler);
         return subscription;
     }
 
