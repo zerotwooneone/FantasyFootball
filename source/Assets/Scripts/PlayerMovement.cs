@@ -11,21 +11,15 @@ public class PlayerMovement : HubParticipantBehavior
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        Subscribe<TestArg>(SubjectKeys.Test, OnTest);
-    }
-
     private void OnTest(TestArg obj)
     {
-        Debug.Log("got test");
+        Debug.Log($"{nameof(PlayerMovement)} got test");
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Debug.Log($"{nameof(PlayerMovement)} awake. about to subscribe");
+        Subscribe<TestArg>(SubjectKeys.Test, OnTest);
     }
 
     // Update is called once per frame
