@@ -5,6 +5,7 @@ public static class SubjectKeys
     private static IDictionary<string, SubjectKey> KeysByName = new Dictionary<string, SubjectKey>();
     public static SubjectKey Test = SubjectKeyFactory<TestArg>();
     public static SubjectKey HubAwake = SubjectKeyFactoryNoPayload("HubAwake");
+    public static SubjectKey PlayerHealthChanged = SubjectKeyFactory<PlayerHealthChangedArgs>();
 
     public static IEnumerable<SubjectKey> GetAllKeys()
     {
