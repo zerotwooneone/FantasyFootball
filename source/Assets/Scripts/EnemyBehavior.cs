@@ -8,6 +8,8 @@ public class EnemyBehavior : HubParticipantBehavior
     public SearchStrategy SearchStrategy;
 
     public MoveStrategy MoveStrategy;
+    public SpriteRenderer SpriteRenderer;
+    public Rigidbody2D Rigidbody;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class EnemyBehavior : HubParticipantBehavior
         if (target != null)
         {
             MoveStrategy.Move(target.Value);
+            bool flipX = Vector2.Angle(Rigidbody.velocity.normalized, Vector2.right) < 90;
+            SpriteRenderer.flipX = flipX;
         }
     }
 
