@@ -2,18 +2,22 @@
 
 public class PlayerHealthChangedArgs
 {
+    public int? Delta { get; }
     public int? Current { get; }
     public int? MAX { get; }
 
-    private PlayerHealthChangedArgs(int? current,
+    private PlayerHealthChangedArgs(int? delta,
+        int? current,
         int? max)
     {
+        Delta = delta;
         Current = current;
         MAX = max;
     }
 
-    public static PlayerHealthChangedArgs Factory(int? current,
-        int? max)
+    public static PlayerHealthChangedArgs Factory(int? delta = null,
+        int? current = null,
+        int? max = null)
     {
         const int MinCurrent = 0;
         const int MaxCurrent = 400;
@@ -30,6 +34,6 @@ public class PlayerHealthChangedArgs
             throw new ArgumentException($"max cannot be below {MinCurrent}");
         }
 
-        return new PlayerHealthChangedArgs(current, max);
+        return new PlayerHealthChangedArgs(delta, current, max);
     }
 }

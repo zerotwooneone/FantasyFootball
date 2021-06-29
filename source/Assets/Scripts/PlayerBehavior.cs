@@ -17,7 +17,7 @@ public class PlayerBehavior : HubParticipantBehavior
         Debug.Log($"{nameof(PlayerBehavior)} start");
         
         Debug.Log($"{nameof(PlayerBehavior)} publishing first");
-        Publish(SubjectKeys.PlayerHealthChanged, PlayerHealthChangedArgs.Factory(CurrentHp, MaxHp));
+        Publish(SubjectKeys.PlayerHealthChanged, PlayerHealthChangedArgs.Factory(current: CurrentHp,max: MaxHp));
         
         Publish(SubjectKeys.Test, new TestArg());
 

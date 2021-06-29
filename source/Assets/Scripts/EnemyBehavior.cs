@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+public class EnemyBehavior : HubParticipantBehavior
 {
     public SearchStrategy SearchStrategy;
 
@@ -30,11 +30,13 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("contacted player");
+            Publish(SubjectKeys.PlayerHealthChanged, PlayerHealthChangedArgs.Factory(delta: -10));
+            // Debug.Log("contacted player");
+            // Publish(SubjectKeys.Test, new TestArg());
         }
     }
 }
